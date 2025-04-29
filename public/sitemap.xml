@@ -3,13 +3,16 @@
   <url>
     <loc>https://partnersgssmartconsulting.com/</loc>
     <priority>1.0</priority>
+    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://partnersgssmartconsulting.com/dashboard</loc>
     <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://partnersgssmartconsulting.com/thankyou</loc>
     <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
   </url>
 </urlset>
