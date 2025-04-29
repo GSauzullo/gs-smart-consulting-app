@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { db } from "./firebase";
 import { collection, getDocs, addDoc, serverTimestamp } from "firebase/firestore";
 import { motion } from "framer-motion";
@@ -53,6 +54,7 @@ export default function App() {
         <div className="space-x-6">
           <Link to="/" className="text-red-600 hover:underline text-lg">Invia Richiesta</Link>
           <Link to="/dashboard" className="text-red-600 hover:underline text-lg">Dashboard</Link>
+          <Link to="/concessionarie" className="text-red-600 hover:underline text-lg">Servizi Concessionarie</Link>
         </div>
       </nav>
 
@@ -85,6 +87,7 @@ export default function App() {
               </div>
             )
           } />
+          <Route path="/concessionarie" element={<Concessionarie />} />
         </Routes>
       </main>
 
@@ -95,64 +98,59 @@ export default function App() {
   );
 }
 
-function Dashboard({ onLogout }) {
-  const [requests, setRequests] = useState([]);
-
-  useEffect(() => {
-    const fetchRequests = async () => {
-      const querySnapshot = await getDocs(collection(db, "partnerRequests"));
-      const data = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-      setRequests(data);
-    };
-    fetchRequests();
-  }, []);
-
+function Concessionarie() {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }} className="min-h-screen bg-[#fafafa] flex flex-col items-center font-[Poppins] px-4 py-12">
-      <div className="w-full max-w-6xl bg-white border border-red-500 rounded-3xl shadow-lg p-10">
-        <div className="flex justify-between items-center mb-8">
-          <div>
-            <h1 className="text-4xl font-extrabold text-red-700 mb-2">Dashboard Richieste</h1>
-            <p className="text-gray-600 text-sm">Visualizza tutte le richieste di convenzione ricevute.</p>
-          </div>
-          <button
-            onClick={onLogout}
-            className="text-sm bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg"
-          >
-            Esci
-          </button>
-        </div>
+    <>
+      <Helmet>
+        <title>Servizi Finanziari per Concessionarie | GS Smart Consulting</title>
+        <meta
+          name="description"
+          content="Soluzioni finanziarie su misura per concessionarie: finanziamenti in sede, noleggio, supporto documentale. Aumenta le vendite e fidelizza i tuoi clienti con GS Smart Consulting."
+        />
+      </Helmet>
+      <motion.div 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        transition={{ duration: 0.8 }}
+        className="min-h-screen flex flex-col items-center justify-center p-8 bg-gray-50 font-[Poppins]"
+      >
+        <div className="w-full max-w-4xl bg-white border-2 border-red-500 rounded-3xl shadow-lg p-10">
+          <h1 className="text-4xl font-extrabold text-red-700 mb-6">
+            Servizi Finanziari Integrati per Concessionarie
+          </h1>
 
-        <div className="overflow-x-auto rounded-2xl shadow">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-red-600 text-white">
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase">Concessionaria</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase">Referente</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase">Telefono</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase">Email</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase">Città</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase">Auto/mese</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase">Note</th>
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-100">
-              {requests.map((request) => (
-                <tr key={request.id} className="hover:bg-gray-50">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm">{request.companyName}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm">{request.contactName}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm">{request.phone}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm">{request.email}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm">{request.city}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm">{request.monthlySales}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm">{request.notes}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <p className="text-gray-600 text-lg mb-8">
+            Offriamo soluzioni finanziarie su misura per concessionarie che desiderano 
+            <strong> aumentare le vendite e fidelizzare i clienti</strong>. 
+            Con il nostro supporto, potrai proporre <strong>finanziamenti in sede</strong> rapidi e personalizzati, 
+            migliorando l’esperienza di acquisto.
+          </p>
+
+          <h2 className="text-2xl font-bold text-red-600 mb-4">I Vantaggi per la Tua Concessionaria</h2>
+          <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-8">
+            <li>✅ Finanziamenti approvati direttamente in showroom</li>
+            <li>📈 Incremento delle chiusure vendita con soluzioni flessibili</li>
+            <li>🔐 Gestione documentale completamente a nostro carico</li>
+            <li>🧰 Integrazione semplice con CRM e gestionali</li>
+            <li>🤝 Formazione e supporto al team vendite</li>
+          </ul>
+
+          <h2 className="text-2xl font-bold text-red-600 mb-4">Cosa Offriamo</h2>
+          <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-8">
+            <li>Finanziamenti rateali personalizzati</li>
+            <li>Noleggio a lungo termine per privati e aziende</li>
+            <li>Offerte dedicate a partite IVA e liberi professionisti</li>
+            <li>Piani promozionali su misura</li>
+          </ul>
+
+          <div className="bg-red-50 p-6 rounded-xl text-center">
+            <p className="text-lg font-semibold text-red-700 mb-4">
+              📩 Contattaci oggi stesso per migliorare l'efficienza commerciale della tua concessionaria!
+            </p>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </>
   );
 }
 

@@ -1,18 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://partnersgssmartconsulting.com/</loc>
-    <priority>1.0</priority>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://partnersgssmartconsulting.com/dashboard</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://partnersgssmartconsulting.com/thankyou</loc>
-    <priority>0.5</priority>
+    <lastmod>2025-04-29</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://partnersgssmartconsulting.com/dashboard</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://partnersgssmartconsulting.com/concessionarie</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
+
