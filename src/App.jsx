@@ -10,6 +10,25 @@ import "./index.css";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [password, setPassword] = useState("");
+  const [authorized, setAuthorized] = useState(() => {
+    return localStorage.getItem("authorized") === "true";
+  });
+
+  const handleAccess = () => {
+    if (password === "Napoli.1926") {
+      localStorage.setItem("authorized", "true");
+      setAuthorized(true);
+    } else {
+      alert("Password errata. Riprova.");
+      setPassword("");
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("authorized");
+    setAuthorized(false);
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -40,8 +59,42 @@ export default function App() {
       <main className="p-6">
         <Routes>
           <Route path="/" element={<PartnerApplication />} />
-          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/thankyou" element={<ThankYou />} />
+          <Route path="/dashboard" element={
+            authorized ? (
+              <div>
+                <Dashboard />
+                <div className="mt-4 text-center">
+                  <button
+                    onClick={handleLogout}
+                    className="text-sm text-red-600 underline hover:text-red-800"
+                  >
+                    Esci dalla Dashboard
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="flex flex-col items-center justify-center min-h-screen p-6">
+                <h1 className="text-2xl font-bold mb-4 text-red-700">Area Riservata</h1>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Inserisci la password"
+                  className="border rounded-lg p-2 mb-4 w-64"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') handleAccess();
+                  }}
+                />
+                <button
+                  onClick={handleAccess}
+                  className="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 rounded-lg"
+                >
+                  Accedi
+                </button>
+              </div>
+            )
+          } />
         </Routes>
       </main>
 
