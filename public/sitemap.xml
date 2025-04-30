@@ -19,15 +19,9 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://partnersgssmartconsulting.com/concessionarie</loc>
-    <lastmod>2025-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://partnersgssmartconsulting.com/servizi-finanziari</loc>
     <lastmod>2025-04-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
 </urlset>

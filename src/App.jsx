@@ -54,7 +54,6 @@ export default function App() {
         <div className="flex flex-wrap gap-4 mt-2 sm:mt-0">
           <Link to="/" className="text-red-600 hover:underline text-base">Richiesta</Link>
           <Link to="/dashboard" className="text-red-600 hover:underline text-base">Dashboard</Link>
-          <Link to="/concessionarie" className="text-red-600 hover:underline text-base">Concessionarie</Link>
           <Link to="/servizi-finanziari" className="text-red-600 hover:underline text-base">Servizi Finanziari</Link>
         </div>
       </nav>
@@ -88,7 +87,6 @@ export default function App() {
               </div>
             )
           } />
-          <Route path="/concessionarie" element={<Concessionarie />} />
           <Route path="/servizi-finanziari" element={<ServiziFinanziari />} />
         </Routes>
       </main>
