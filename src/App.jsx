@@ -52,10 +52,10 @@ export default function App() {
       <nav className="bg-white border-b-2 border-red-600 px-6 py-4 flex flex-wrap justify-between items-center shadow-md">
         <div className="text-2xl font-bold text-red-700">GS Smart Consulting</div>
         <div className="flex flex-wrap gap-4 mt-2 sm:mt-0">
+          <Link to="/convenzionati" className="text-red-600 hover:underline text-base">Servizi per Convenzionati</Link>
+          <Link to="/servizi-finanziari" className="text-red-600 hover:underline text-base">La nostra offerta commerciale</Link>
           <Link to="/" className="text-red-600 hover:underline text-base">Richiesta</Link>
           <Link to="/dashboard" className="text-red-600 hover:underline text-base">Dashboard</Link>
-          <Link to="/convenzionati" className="text-red-600 hover:underline text-base">Servizi per Convenzionati</Link>
-          <Link to="/servizi-finanziari" className="text-red-600 hover:underline text-base">Servizi Finanziari</Link>
         </div>
       </nav>
 
@@ -133,6 +133,7 @@ function Convenzionati() {
     </motion.div>
   );
 }
+
 
 
 
