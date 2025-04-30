@@ -49,16 +49,17 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-[Poppins]">
-      <nav className="bg-white border-b-2 border-red-600 px-8 py-6 flex justify-between items-center shadow-md">
+      <nav className="bg-white border-b-2 border-red-600 px-6 py-4 flex flex-wrap justify-between items-center shadow-md">
         <div className="text-2xl font-bold text-red-700">GS Smart Consulting</div>
-        <div className="space-x-6">
-          <Link to="/" className="text-red-600 hover:underline text-lg">Invia Richiesta</Link>
-          <Link to="/dashboard" className="text-red-600 hover:underline text-lg">Dashboard</Link>
-          <Link to="/concessionarie" className="text-red-600 hover:underline text-lg">Servizi Concessionarie</Link>
+        <div className="flex flex-wrap gap-4 mt-2 sm:mt-0">
+          <Link to="/" className="text-red-600 hover:underline text-base">Richiesta</Link>
+          <Link to="/dashboard" className="text-red-600 hover:underline text-base">Dashboard</Link>
+          <Link to="/concessionarie" className="text-red-600 hover:underline text-base">Concessionarie</Link>
+          <Link to="/servizi-finanziari" className="text-red-600 hover:underline text-base">Servizi Finanziari</Link>
         </div>
       </nav>
 
-      <main className="p-6">
+      <main className="p-4 sm:p-6">
         <Routes>
           <Route path="/" element={<PartnerApplication />} />
           <Route path="/thankyou" element={<ThankYou />} />
@@ -88,6 +89,7 @@ export default function App() {
             )
           } />
           <Route path="/concessionarie" element={<Concessionarie />} />
+          <Route path="/servizi-finanziari" element={<ServiziFinanziari />} />
         </Routes>
       </main>
 
@@ -98,62 +100,67 @@ export default function App() {
   );
 }
 
-function Concessionarie() {
+function ServiziFinanziari() {
   return (
     <>
       <Helmet>
-        <title>Servizi Finanziari per Concessionarie | GS Smart Consulting</title>
+        <title>Servizi Finanziari | Leasing, Nautica, Arredo, Prestiti</title>
         <meta
           name="description"
-          content="Soluzioni finanziarie su misura per concessionarie: finanziamenti in sede, noleggio, supporto documentale. Aumenta le vendite e fidelizza i tuoi clienti con GS Smart Consulting."
+          content="Scopri le nostre soluzioni: leasing auto, finanziamenti per la nautica, per l’arredo e prestiti personali. Servizi su misura per privati e aziende."
         />
       </Helmet>
-      <motion.div 
-        initial={{ opacity: 0 }} 
-        animate={{ opacity: 1 }} 
-        transition={{ duration: 0.8 }}
-        className="min-h-screen flex flex-col items-center justify-center p-8 bg-gray-50 font-[Poppins]"
-      >
-        <div className="w-full max-w-4xl bg-white border-2 border-red-500 rounded-3xl shadow-lg p-10">
-          <h1 className="text-4xl font-extrabold text-red-700 mb-6">
-            Servizi Finanziari Integrati per Concessionarie
-          </h1>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }} className="min-h-screen bg-[#fafafa] p-6 sm:p-10">
+        <div className="max-w-4xl mx-auto bg-white border border-red-500 rounded-3xl shadow-lg p-6 sm:p-10 space-y-10">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-red-700">Servizi Finanziari Personalizzati</h1>
 
-          <p className="text-gray-600 text-lg mb-8">
-            Offriamo soluzioni finanziarie su misura per concessionarie che desiderano 
-            <strong> aumentare le vendite e fidelizzare i clienti</strong>. 
-            Con il nostro supporto, potrai proporre <strong>finanziamenti in sede</strong> rapidi e personalizzati, 
-            migliorando l’esperienza di acquisto.
-          </p>
+          <section>
+            <h2 className="text-xl font-bold text-red-600 mb-2">🚗 Leasing Auto</h2>
+            <p className="text-gray-700">Offriamo leasing per veicoli nuovi e usati, personalizzati per aziende e privati. Piani flessibili e vantaggiosi per ogni esigenza.</p>
+          </section>
 
-          <h2 className="text-2xl font-bold text-red-600 mb-4">I Vantaggi per la Tua Concessionaria</h2>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-8">
-            <li>✅ Finanziamenti approvati direttamente in showroom</li>
-            <li>📈 Incremento delle chiusure vendita con soluzioni flessibili</li>
-            <li>🔐 Gestione documentale completamente a nostro carico</li>
-            <li>🧰 Integrazione semplice con CRM e gestionali</li>
-            <li>🤝 Formazione e supporto al team vendite</li>
-          </ul>
+          <section>
+            <h2 className="text-xl font-bold text-red-600 mb-2">🛥️ Finanziamenti Nautica</h2>
+            <p className="text-gray-700">Finanziamo l’acquisto di barche, gommoni e motori marini. Soluzioni rapide e assistenza su misura per il settore nautico.</p>
+          </section>
 
-          <h2 className="text-2xl font-bold text-red-600 mb-4">Cosa Offriamo</h2>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-8">
-            <li>Finanziamenti rateali personalizzati</li>
-            <li>Noleggio a lungo termine per privati e aziende</li>
-            <li>Offerte dedicate a partite IVA e liberi professionisti</li>
-            <li>Piani promozionali su misura</li>
-          </ul>
+          <section>
+            <h2 className="text-xl font-bold text-red-600 mb-2">🪑 Finanziamenti Arredo</h2>
+            <p className="text-gray-700">Supportiamo mobilifici e clienti nell’acquisto di arredamento per casa e ufficio. Finanziamenti chiari, con rate su misura.</p>
+          </section>
 
-          <div className="bg-red-50 p-6 rounded-xl text-center">
-            <p className="text-lg font-semibold text-red-700 mb-4">
-              📩 Contattaci oggi stesso per migliorare l'efficienza commerciale della tua concessionaria!
-            </p>
-          </div>
+          <section>
+            <h2 className="text-xl font-bold text-red-600 mb-2">👛 Prestiti Personali</h2>
+            <p className="text-gray-700">Prestiti rapidi per esigenze personali, anche senza finalità specifica. Valutazione veloce e gestione documentale completa.</p>
+          </section>
         </div>
       </motion.div>
     </>
   );
 }
 
+function Concessionarie() {
+  return (
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }} className="min-h-screen flex flex-col items-center justify-center p-8 bg-gray-50 font-[Poppins]">
+      <div className="w-full max-w-4xl bg-white border-2 border-red-500 rounded-3xl shadow-lg p-10">
+        <h1 className="text-4xl font-extrabold text-red-700 mb-6">Servizi Finanziari Integrati per Concessionarie</h1>
+        <p className="text-gray-600 text-lg mb-8">Offriamo soluzioni finanziarie su misura per concessionarie che desiderano <strong>aumentare le vendite e fidelizzare i clienti</strong>. Con il nostro supporto, potrai proporre <strong>finanziamenti in sede</strong> rapidi e personalizzati.</p>
+        <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-8">
+          <li>✅ Finanziamenti approvati direttamente in showroom</li>
+          <li>📈 Incremento delle chiusure vendita con soluzioni flessibili</li>
+          <li>🔐 Gestione documentale completamente a nostro carico</li>
+          <li>🧰 Integrazione semplice con CRM e gestionali</li>
+          <li>🤝 Formazione e supporto al team vendite</li>
+        </ul>
+        <div className="bg-red-50 p-6 rounded-xl text-center">
+          <p className="text-lg font-semibold text-red-700 mb-4">
+            📩 Contattaci oggi stesso per migliorare l'efficienza commerciale della tua concessionaria!
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 function PartnerApplication() {
   const navigate = useNavigate();
