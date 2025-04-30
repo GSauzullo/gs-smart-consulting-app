@@ -156,45 +156,6 @@ function ServiziFinanziari() {
   );
 }
 
-function PartnerApplication() { /* Resta invariato */ }
-function Dashboard() { /* Resta invariato */ }
-function ThankYou() {
-  return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }} className="flex justify-center items-center min-h-screen bg-[#fafafa] font-[Poppins]">
-      <div className="text-center">
-        <h1 className="text-4xl font-extrabold text-red-700 mb-4">Grazie per la tua richiesta!</h1>
-        <p className="text-gray-600 text-lg mb-8">Ti ricontatteremo al più presto.</p>
-        <Link to="/" className="inline-block bg-red-600 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-red-700 transition-transform transform hover:scale-105">
-          Torna alla Home
-        </Link>
-      </div>
-    </motion.div>
-  );
-}
-
-function Concessionarie() {
-  return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }} className="min-h-screen flex flex-col items-center justify-center p-8 bg-gray-50 font-[Poppins]">
-      <div className="w-full max-w-4xl bg-white border-2 border-red-500 rounded-3xl shadow-lg p-10">
-        <h1 className="text-4xl font-extrabold text-red-700 mb-6">Servizi Finanziari Integrati per Concessionarie</h1>
-        <p className="text-gray-600 text-lg mb-8">Offriamo soluzioni finanziarie su misura per concessionarie che desiderano <strong>aumentare le vendite e fidelizzare i clienti</strong>. Con il nostro supporto, potrai proporre <strong>finanziamenti in sede</strong> rapidi e personalizzati.</p>
-        <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-8">
-          <li>✅ Finanziamenti approvati direttamente in showroom</li>
-          <li>📈 Incremento delle chiusure vendita con soluzioni flessibili</li>
-          <li>🔐 Gestione documentale completamente a nostro carico</li>
-          <li>🧰 Integrazione semplice con CRM e gestionali</li>
-          <li>🤝 Formazione e supporto al team vendite</li>
-        </ul>
-        <div className="bg-red-50 p-6 rounded-xl text-center">
-          <p className="text-lg font-semibold text-red-700 mb-4">
-            📩 Contattaci oggi stesso per migliorare l'efficienza commerciale della tua concessionaria!
-          </p>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
 function PartnerApplication() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -259,7 +220,7 @@ function PartnerApplication() {
   );
 }
 
-function Dashboard() {
+function Dashboard({ onLogout }) {
   const [requests, setRequests] = useState([]);
 
   useEffect(() => {
@@ -279,12 +240,8 @@ function Dashboard() {
             <h1 className="text-4xl font-extrabold text-red-700 mb-2">Dashboard Richieste</h1>
             <p className="text-gray-600 text-sm">Visualizza tutte le richieste di convenzione ricevute.</p>
           </div>
-          <div className="flex gap-4 items-center">
-            <img src={logo} alt="GS Logo" className="w-16 h-16 bg-white rounded-2xl p-2 shadow-md" />
-            <img src={santanderLogo} alt="Santander Logo" className="w-16 h-16 bg-white rounded-2xl p-2 shadow-md" />
-          </div>
+          <button onClick={onLogout} className="text-sm text-red-600 underline">Esci</button>
         </div>
-
         <div className="overflow-x-auto rounded-2xl shadow">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-red-600 text-white">
@@ -329,6 +286,5 @@ function ThankYou() {
         </Link>
       </div>
     </motion.div>
-  ); // 
+  );
 }
-
