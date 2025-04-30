@@ -105,7 +105,7 @@ function ServiziFinanziari() {
         <title>Servizi Finanziari | Leasing, Nautica, Arredo, Prestiti</title>
         <meta
           name="description"
-          content="Scopri le nostre soluzioni: leasing auto, finanziamenti per la nautica, per l’arredo, prestiti personali e servizi dedicati alle concessionarie. Servizi su misura per privati e aziende."
+          content="Scopri le nostre soluzioni: leasing auto, noleggio lungo termine, finanziamenti nautici, per l’arredo, prestiti personali e servizi per concessionarie."
         />
       </Helmet>
       <motion.div
@@ -119,58 +119,38 @@ function ServiziFinanziari() {
 
           <section>
             <h2 className="text-xl font-bold text-red-600 mb-2">🚘 Finanziamenti Auto</h2>
-            <p className="text-gray-700">
-              Proponiamo finanziamenti su misura per l’acquisto di auto nuove, usate e a km0, con gestione in sede e assistenza al punto vendita. Offriamo strumenti di simulazione e preventivazione immediata per aumentare la competitività dei partner automotive.
-            </p>
+            <p className="text-gray-700">Proponiamo finanziamenti per auto nuove, usate e km0 con gestione pratica direttamente in sede e strumenti digitali per la vendita.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-red-600 mb-2">📅 Noleggio a Lungo Termine</h2>
+            <p className="text-gray-700">Soluzioni di noleggio auto flessibili per privati e aziende. Offriamo pacchetti con manutenzione, assicurazione e assistenza inclusa.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-red-600 mb-2">🛥️ Finanziamenti Nautica</h2>
-            <p className="text-gray-700">
-              Finanziamo l’acquisto di barche, gommoni, motori marini e accessori nautici. Soluzioni flessibili, rapide e pensate per chi vive il mare, sia a livello amatoriale che professionale.
-            </p>
+            <p className="text-gray-700">Finanziamento per barche, motori e accessori nautici. Rapidità di risposta e condizioni personalizzate per il settore marittimo.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-red-600 mb-2">🪑 Finanziamenti Arredo</h2>
-            <p className="text-gray-700">
-              Supportiamo mobilifici e clienti finali nell’acquisto di arredamento completo. Offriamo soluzioni di finanziamento personalizzate con gestione documentale semplificata e tempi di approvazione rapidi.
-            </p>
+            <p className="text-gray-700">Supporto finanziario per l’acquisto di arredamento casa e ufficio, con soluzioni rateali flessibili e gestione pratica semplificata.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-red-600 mb-2">👛 Prestiti Personali</h2>
-            <p className="text-gray-700">
-              Offriamo prestiti personali anche non finalizzati, con tassi competitivi e la possibilità di gestire tutta la pratica online. Ideali per esigenze familiari, progetti personali o spese improvvise.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold text-red-600 mb-2">🏠 Cessione del Quinto</h2>
-            <p className="text-gray-700">
-              Soluzioni dedicate a dipendenti e pensionati per ottenere liquidità trattenuta direttamente dalla busta paga o pensione. Nessuna necessità di garante, con piani comodi e trasparenti.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold text-red-600 mb-2">📄 Finanziamenti Aziendali</h2>
-            <p className="text-gray-700">
-              Affianchiamo le imprese nell’ottenere credito per sviluppo, acquisto attrezzature, ristrutturazioni o capitale circolante. Supporto nella presentazione documentale e accesso a soluzioni agevolate.
-            </p>
+            <p className="text-gray-700">Prestiti rapidi anche senza finalità specifica, ideali per spese impreviste o progetti personali, gestibili completamente online.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-red-600 mb-2">🏢 Servizi per Concessionarie</h2>
-            <p className="text-gray-700">
-              Sviluppiamo partnership con concessionarie per offrire finanziamenti direttamente in sede, con strumenti digitali, gestione documentale esterna e formazione continua. Aumenta le vendite offrendo soluzioni rapide e professionali ai tuoi clienti.
-            </p>
+            <p className="text-gray-700">Finanziamenti in sede, strumenti digitali per la vendita, assistenza e formazione commerciale dedicata per i dealer partner.</p>
           </section>
         </div>
       </motion.div>
     </>
   );
 }
-
 
 function Concessionarie() {
   return (
