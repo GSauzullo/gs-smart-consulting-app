@@ -54,6 +54,7 @@ export default function App() {
         <div className="flex flex-wrap gap-4 mt-2 sm:mt-0">
           <Link to="/" className="text-red-600 hover:underline text-base">Richiesta</Link>
           <Link to="/dashboard" className="text-red-600 hover:underline text-base">Dashboard</Link>
+          <Link to="/convenzionati" className="text-red-600 hover:underline text-base">Servizi per Convenzionati</Link>
           <Link to="/servizi-finanziari" className="text-red-600 hover:underline text-base">Servizi Finanziari</Link>
         </div>
       </nav>
@@ -88,6 +89,7 @@ export default function App() {
             )
           } />
           <Route path="/servizi-finanziari" element={<ServiziFinanziari />} />
+          <Route path="/convenzionati" element={<Convenzionati />} />
         </Routes>
       </main>
 
@@ -107,7 +109,32 @@ export default function App() {
   );
 }
 
-// Il resto del codice (ServiziFinanziari, PartnerApplication, Dashboard, ThankYou) rimane invariato
+function Convenzionati() {
+  return (
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }} className="min-h-screen p-6 sm:p-10 bg-gray-50 font-[Poppins]">
+      <Helmet>
+        <title>Servizi per Convenzionati | GS Smart Consulting</title>
+        <meta name="description" content="Scopri come GS Smart Consulting può diventare il tuo partner unico per tutti i servizi finanziari. Affiancamento, formazione e gestione integrata." />
+      </Helmet>
+      <div className="max-w-4xl mx-auto bg-white border border-red-500 rounded-3xl shadow-lg p-6 sm:p-10">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-red-700 mb-6">Servizi Esclusivi per Convenzionati</h1>
+        <p className="text-gray-700 text-base mb-6">
+          Affidati completamente a GS Smart Consulting per semplificare e potenziare la tua attività. Offriamo una gestione integrata dei finanziamenti,
+          affiancamento ai venditori, formazione continua e supporto documentale per garantire risultati concreti e duraturi.
+        </p>
+        <ul className="list-disc pl-6 text-gray-700 space-y-2">
+          <li>✅ Approvazione finanziamenti direttamente in sede</li>
+          <li>📈 Supporto operativo costante ai consulenti vendita</li>
+          <li>🎓 Formazione tecnica e commerciale dedicata</li>
+          <li>🗂️ Gestione pratica e burocrazia completamente a nostro carico</li>
+          <li>🤝 Soluzioni personalizzate per ogni realtà aziendale</li>
+        </ul>
+      </div>
+    </motion.div>
+  );
+}
+
+
 
 
 function ServiziFinanziari() {
