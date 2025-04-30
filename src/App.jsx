@@ -91,12 +91,24 @@ export default function App() {
         </Routes>
       </main>
 
+      <a
+        href="https://wa.me/393456012471"
+        className="fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-full shadow-lg z-50 text-sm"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        💬 Contattaci su WhatsApp 24/7
+      </a>
+
       <footer className="text-center py-6 text-gray-400 text-xs">
         &copy; {new Date().getFullYear()} GS Smart Consulting x Santander Consumer Bank. All rights reserved.
       </footer>
     </div>
   );
 }
+
+// Il resto del codice (ServiziFinanziari, PartnerApplication, Dashboard, ThankYou) rimane invariato
+
 
 function ServiziFinanziari() {
   return (
