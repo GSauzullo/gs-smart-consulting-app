@@ -156,6 +156,21 @@ function ServiziFinanziari() {
   );
 }
 
+function PartnerApplication() { /* Resta invariato */ }
+function Dashboard() { /* Resta invariato */ }
+function ThankYou() {
+  return (
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }} className="flex justify-center items-center min-h-screen bg-[#fafafa] font-[Poppins]">
+      <div className="text-center">
+        <h1 className="text-4xl font-extrabold text-red-700 mb-4">Grazie per la tua richiesta!</h1>
+        <p className="text-gray-600 text-lg mb-8">Ti ricontatteremo al più presto.</p>
+        <Link to="/" className="inline-block bg-red-600 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-red-700 transition-transform transform hover:scale-105">
+          Torna alla Home
+        </Link>
+      </div>
+    </motion.div>
+  );
+}
 
 function Concessionarie() {
   return (
@@ -314,3 +329,6 @@ function ThankYou() {
         </Link>
       </div>
     </motion.div>
+  ); // 
+}
+
